@@ -25,6 +25,8 @@
     <section id="sectionCenter">C</section>
     <section id="sectionRight">R</section>
     </main>
-
+<br>
+<a href="phpFiles/createFil.php">Create</a>
+<a href="phpFiles/deleteFil.php">Delete</a>
 </body>
 </html>
