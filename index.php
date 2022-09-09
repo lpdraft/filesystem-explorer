@@ -1,23 +1,12 @@
-<?php 
-    //====================================
-    //se carga la cookie de sesion que crea el navegador
-    //setcookie ("PHPSESSID", "", time() - 3600, '/');
-    //====================================
-    session_start();
-    $_SESSION['base_url'] = getcwd();
-     
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <!-- CSS only -->
+    <link rel="stylesheet" href="./style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    
-    <title>Document</title>
+    <title>MyDrive</title>
 </head>
 <body>
     <header>
@@ -27,7 +16,7 @@
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 link-secondary">Drive</a></li>
+          <li><a href="#" class="nav-link px-2 link-secondary">MyDrive</a></li>
 
         </ul>
 
@@ -37,7 +26,7 @@
 
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            <img src="./assets/yo.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
           <ul class="dropdown-menu text-small">
             <li><a class="dropdown-item" href="#">New project...</a></li>
@@ -49,13 +38,48 @@
         </div>
       </div>
     </header>
-    <main>
-    <section id="sectionLeft">
+    
 
+
+    <main>
+
+    <section id="sectionLeft">
+    <div class="containerLeft">
+    <a href="./modules/newfile.php">Crear archivo</a>
+
+<br>
+    <a href="./modules/deletefile.php">Borrar archivo</a>
+<br>
+<br>
+<br>
+<br>
+    <form action="create.php" method="POST">
+        Name of the folder:
+        <input type="text" name="name">
+        <input type="submit" value= "create">
+    </form>
+
+<?php
+// echo $_GET['msg'];
+
+$path = ".";
+$dir = opendir($path) or die ("Unable to open directory");
+
+while($file = readdir($dir)) {
+
+ if ($file == "." || $file == ".."|| $file== "create.php" || $file = "deletefile.php" )
+    continue;
+    echo " <a href ='$file'> $file </a><a href='delete.php?dir=$file'> </a> ";
+}
+
+closedir($dir);
+?>
+
+    </div>
     </section>
 
-    <section id="sectionCenter">C</section>
-    <section id="sectionRight">R</section>
+    <section id="sectionCenter"></section>
+    <section id="sectionRight"></section>
     </main>
 
 </body>
