@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 
 // $fname ='file.php';
 // fopen($fname,'w+');
@@ -9,6 +9,6 @@ mkdir($dir);
 
 // $mensaje = 'Archivo creado';
 
-header('location: ../index.php);
-// header('location:../index.php?msg='.$mensaje);
-?>
+header('Location: ../index.php);
+// header('Location: ../index.php?msg='.$mensaje);
+?> -->
