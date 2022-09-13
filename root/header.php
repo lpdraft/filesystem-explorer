@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="../assets/style.css">
     <script src="https://kit.fontawesome.com/9cf497312c.js" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="../jquery/jquery-3.6.1.min.js"></script>
     <title>MyDrive</title>
 </head>
 <header>
@@ -32,7 +32,7 @@
 
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="./assets/yo.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
+            <img src="../assets/yo.jpg" alt="mdo" width="32" height="32" class="rounded-circle">
           </a>
 
           </ul>

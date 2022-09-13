@@ -10,21 +10,19 @@ header{
 .create{
 margin-right: 20px;
 }
- main{
-    display: flex;
- }
+
 
 .container{
     display: flex;
     align-items: center;
 }
 
-.table{
+/* .table{
     margin: 20px;
     width: 60%;
     position: absolute;
     margin-top: 0;
-}
+} */
 .aside{
     position: relative;
 }
