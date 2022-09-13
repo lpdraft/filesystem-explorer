@@ -5,12 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FileSystem</title>
-
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
      <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
     <script src="./jquery/jquery-3.6.1.min.js"></script>
     <script src="https://kit.fontawesome.com/5fe3336987.js" crossorigin="anonymous"></script>
 
@@ -22,16 +20,13 @@
     </style>
 </head>
 
-<body>
-    <br>
-    <div class="container">
-        <h2> List Folder PHP-JQuery</h2>
-        <br>
-        <div class="divRight">
-        <button type="button" name="create_folder" id="create_folder" class="btn btn-success" data-bs-toggle="modal" data-bs-target='#folderModal'>Create</button>
-        </div>
+<?php include('header.php'); ?>
 
+<body>
+    <div class="container">
+        <?php include('aside.php'); ?>
         <div class="table-responsive" id="folder_table"></div>
+        
     </div>   
 </body>
 </html>
@@ -40,7 +35,6 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                     <h5 class="modal-title"><span id="change_title">Create Folder</span></h5>
                 </div>
 
@@ -107,7 +101,7 @@
 </div>
 
 
- <script>
+<script>
         $(document).ready(function(){
 
             load_folder_list();

@@ -35,20 +35,20 @@ if(isset($_POST['action'])){
         $output = '
         <table class="table table-bordered table-striped">
         <tr>
-        <th><i class="fa-solid fa-folder"></i>Folder Name</th>
-        <th><i class="fa-solid fa-file"></i>Total File</th>
-        <th><i class="fas fa-weight"></i>Size</th>
-        <th><i class="fa-solid fa-pen-to-square"></i>Update</th>
-        <th><i class="fa-solid fa-trash"></i>Delete</th>
-        <th><i class="fa-solid fa-upload"></i>Upload File</th>
-        <th><i class="fa-sharp fa-solid fa-eye"></i>View Uploaded File</th>
+        <th><i class="fa-solid fa-folder"></i>  Folder Name</th>
+        <th><i class="fa-solid fa-file"></i>  Total File</th>
+        <th><i class="fas fa-weight"></i>  Size</th>
+        <th><i class="fa-solid fa-pen-to-square"></i>  Update</th>
+        <th><i class="fa-solid fa-trash"></i>  Delete</th>
+        <th><i class="fa-solid fa-upload"></i>  Upload File</th>
+        <th><i class="fa-sharp fa-solid fa-eye"></i>  View Uploaded File</th>
         </tr>
         ';
         if(count($folder)>0){
             foreach($folder as $name){
                 // Print folder name
                 $output .= ' 
-                <tr>
+                <tr id="folder_table">
                     <td>'.$name.'</td>
 
                     <td>'.(count(scandir($name))-2).'</td>
