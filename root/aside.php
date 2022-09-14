@@ -1,3 +1,6 @@
+
+
+
 <div class="aside">
 
 <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
@@ -8,29 +11,52 @@
     <ul class="list-unstyled ps-0">
       <li class="mb-1">
         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Home
+        
+        Folders 
+
         </button>
         <div class="collapse show" id="home-collapse">
           <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Updates</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Reports</a></li>
+            <?php 
+            FolderList('../root');
+            function FolderList($path){
+              if (is_dir ($path)){
+                if ($handle = opendir ($path)){
+                  echo '<ul>';
+                  $files = [];
+                  while (false !== ($entry = readdir($handle))){
+                    if ($entry != '.' && $entry != '..' ){
+                      array_push($files, $entry);
+                    }
+                  }
+                  for ($i=0; $i<count($files);$i++){
+                    $newPath = $path . '/' . $files[$i];
+                    $newPathinfo = pathinfo($newPath);
+                    if (!is_dir($newPath)){
+                      if (($newPathinfo['extension'] !== 'php') &&
+                          ($newPathinfo['extension'] !== 'md') &&
+                          ($newPathinfo['extension'] !== 'DS_Store')){
+                      echo '<li>' .$files[$i]. '</li>';
+                      }
+                    }
+                    
+                    if (is_dir($newPath)){
+                    echo '<li>' .$files[$i]. '</li>';
+                    FolderList($newPath);
+                    }
+                  }
+                  echo '</ul>';
+                }
+              }
+            }
+            ?>
+
+
+
           </ul>
         </div>
       </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Overview</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Weekly</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Monthly</a></li>
-            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Annually</a></li>
-          </ul>
-        </div>
-      </li>
+
 
 
         </div>

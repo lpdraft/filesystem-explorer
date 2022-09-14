@@ -64,8 +64,9 @@ if(isset($_POST['action'])){
                     <td><button type="button" name="view_files" data-name="'.$name.'" class="view_files btn btn-info btn-xs">View Files</button></td>
 
                 </tr>
-
                 ';
+
+
             }
         } else{
             $output .= '
@@ -90,7 +91,7 @@ if(isset($_POST['action'])){
     
     }
 
-    // Coprobar si se cambio el nombre nuevo
+    // Comprobar si se cambio el nombre nuevo
     if($_POST['action'] =='change'){
         if(!file_exists($_POST['folder_name'])){
 
