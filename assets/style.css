@@ -1,34 +1,26 @@
-body{
-width: 100vw;
-height: 100vh;
+body {
+  width: 100vw;
+  height: 100vh;
 }
 
-
-header{
-    padding: 8px;
+header {
+  padding: 8px;
+  background-color: rgb(191, 199, 196);
 }
-.create{
-margin-right: 20px;
+.create {
+  margin-right: 20px;
 }
- main{
-    display: flex;
- }
-
-.container{
-    display: flex;
-    align-items: center;
+.container {
+  display: flex;
+  align-items: center;
 }
 
-.table{
+/* .table{
     margin: 20px;
     width: 60%;
     position: absolute;
     margin-top: 0;
+} */
+.aside {
+  position: relative;
 }
-.aside{
-    position: relative;
-}
-
-
-
-
