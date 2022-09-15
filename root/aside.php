@@ -39,7 +39,6 @@
                       echo '<li>' .$files[$i]. '</li>';
                       }
                     }
-                    
                     if (is_dir($newPath)){
                     echo '<li>' .$files[$i]. '</li>';
                     FolderList($newPath);

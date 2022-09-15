@@ -33,8 +33,8 @@ if(isset($_POST['action'])){
         // Return foldr names in array
         $folder = array_filter(glob('*'), 'is_dir');
         $output = '
-        <table class="table table-bordered table-striped">
-        <tr>
+        <table id="search-table" class="table table-bordered table-striped">
+        <tr id="table_header">
         <th><i class="fa-solid fa-folder"></i>  Folder Name</th>
         <th><i class="fa-solid fa-file"></i>  Total File</th>
         <th><i class="fas fa-weight"></i>  Size</th>
@@ -167,4 +167,7 @@ if(isset($_POST['action'])){
         }
     }
 }
+
+
+
 ?>
